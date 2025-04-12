@@ -15,7 +15,8 @@
     "prettier": "prettier --single-quote --no-semi \"**/*.{js,md}\"",
     "format": "npm run prettier -- --write && eslint . --fix",
     "pretest": "npm run clean && npm run format",
-    "test": "c8 ava -v"
+    "test": "c8 ava -v",
+    "build": "babel src --out-dir lib --extensions \".js\" --presets=@babel/preset-env"
   },
   "dependencies": {
     "chokidar": "^3.3.0",
@@ -31,17 +32,12 @@
     "yargs": "^17.0.0"
   },
   "devDependencies": {
-    "ava": "^3.1.0",
-    "c8": "^10.0.0",
-    "coveralls": "^3.0.0",
-    "eslint": "^9.22.0",
-    "eslint-config-problems": "9.0.0",
-    "globals": "^16.0.0",
-    "postcss": "^8.0.4",
-    "postcss-import": "^16.0.0",
-    "prettier": "~3.5.0",
-    "sugarss": "^5.0.0",
-    "uuid": "^11.0.0"
+    "cssnano": "^7.0.6",
+    "less": "^4.3.0",
+    "less-plugin-clean-css": "^1.6.0",
+    "less-watch-compiler": "^1.16.3",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1"
   },
   "peerDependencies": {
     "postcss": "^8.0.0"
